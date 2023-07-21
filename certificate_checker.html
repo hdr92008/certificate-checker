@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Certificate Checker</title>
+</head>
+<body>
+    <!-- Your content will go here -->
+    <h1>QR Code Certificate Checker</h1>
+    <input type="text" id="certificateInput" placeholder="Enter certificate number">
+    <button onclick="checkCertificate()">Check</button>
+    <div id="resultMessage"></div>
+    <p>Contact us on Instagram @bahareimdad for any kind of information</p>
+    <script>
+function checkCertificate() {
+    const certificateNumber = document.getElementById('certificateInput').value;
+
+    // Add your specified numbers here (replace with actual numbers)
+    const revokedNumbers = [123, 456, 789];
+
+    if (revokedNumbers.includes(parseInt(certificateNumber))) {
+        document.getElementById('resultMessage').innerText = "This certificate has been revoked due to violation of terms and conditions";
+    } else {
+        document.getElementById('resultMessage').innerText = "This is an original certificate";
+    }
+}
+</script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 30px;
+}
+
+h1 {
+    color: #007bff;
+}
+
+input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#resultMessage {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+</style>
+
+</body>
+</html>
